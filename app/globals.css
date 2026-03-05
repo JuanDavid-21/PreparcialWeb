@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.app-header {
+  background: #FDB608; /* Header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 10px;
+}
+
+.app-main {
+  background: #e0e0e0; /* Main */
+  min-height: calc(100vh - 120px);
+  padding: 24px 16px;
+}
+
+.app-footer {
+  background: #BBCCBB; /* Footer */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  font-size: 14px;
+}

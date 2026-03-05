@@ -1,11 +1,18 @@
-export default async function LangLayout({
+import Headers from "@/components/Header";
+import Footers from "@/components/Footer";
+
+export default function LangLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: { lang: string };
 }) {
-  const { lang } = await params;
-
-  return <div data-lang={lang}>{children}</div>;
+  return (
+    <>
+      <Headers lang={params.lang} />
+      <main className="app-main">{children}</main>
+      <Footers devId="SIS3710" />
+    </>
+  );
 }

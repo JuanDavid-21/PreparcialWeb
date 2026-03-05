@@ -1,19 +1,12 @@
-import { getDictionary } from "../../lib/dictionary";
+import type { Metadata } from "next";
+import Lista from "@/components/Lista";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
-  const dict = await getDictionary(lang);
+export const metadata: Metadata = {
+  title: "Listado de personajes - HarryPotterApp",
+  description:
+    "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales.",
+};
 
-  return (
-    <main>
-      <h1>{dict.welcome}</h1>
-      <p>{dict.home}</p>
-      <p>{dict.profile}</p>
-      <p>LANG: {lang}</p>
-    </main>
-  );
+export default function Page({ params }: { params: { lang: string } }) {
+  return <Lista lang={params.lang} />;
 }
